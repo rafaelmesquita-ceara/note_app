@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="note_appModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="NotesSet">
+          <Key>
+            <PropertyRef Name="CD_Notes" />
+          </Key>
+          <Property Name="CD_Notes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CH_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CH_Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DT_Creation" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UsersSet">
+          <Key>
+            <PropertyRef Name="CD_Users" />
+          </Key>
+          <Property Name="CD_Users" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CH_Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CH_Login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CH_Password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DT_Creation" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="note_appModelStoreContainer">
+          <EntitySet Name="NotesSet" EntityType="Self.NotesSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UsersSet" EntityType="Self.UsersSet" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="note_appModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NoteEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="NotesSet" EntityType="note_appModel.NotesSet" />
+          <EntitySet Name="UsersSet" EntityType="note_appModel.Users" />
+        </EntityContainer>
+        <EntityType Name="NotesSet">
+          <Key>
+            <PropertyRef Name="CD_Notes" />
+          </Key>
+          <Property Name="CD_Notes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CH_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CH_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DT_Creation" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="CD_Users" />
+          </Key>
+          <Property Name="CD_Users" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CH_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CH_Login" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CH_Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="DT_Creation" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="note_appModelStoreContainer" CdmEntityContainer="NoteEntities">
+    <EntitySetMapping Name="NotesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(note_appModel.NotesSet)">
+        <MappingFragment StoreEntitySet="NotesSet">
+          <ScalarProperty Name="CD_Notes" ColumnName="CD_Notes" />
+          <ScalarProperty Name="CH_Name" ColumnName="CH_Name" />
+          <ScalarProperty Name="CH_Description" ColumnName="CH_Description" />
+          <ScalarProperty Name="DT_Creation" ColumnName="DT_Creation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(note_appModel.Users)">
+        <MappingFragment StoreEntitySet="UsersSet">
+          <ScalarProperty Name="CD_Users" ColumnName="CD_Users" />
+          <ScalarProperty Name="CH_Name" ColumnName="CH_Name" />
+          <ScalarProperty Name="CH_Login" ColumnName="CH_Login" />
+          <ScalarProperty Name="CH_Password" ColumnName="CH_Password" />
+          <ScalarProperty Name="DT_Creation" ColumnName="DT_Creation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="note_appModelStoreContainer" CdmEntityContainer="NoteEntities">
+    <EntitySetMapping Name="NotesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(note_appModel.NotesSet)">
+        <MappingFragment StoreEntitySet="NotesSet">
+          <ScalarProperty Name="CD_Notes" ColumnName="CD_Notes" />
+          <ScalarProperty Name="CH_Name" ColumnName="CH_Name" />
+          <ScalarProperty Name="CH_Description" ColumnName="CH_Description" />
+          <ScalarProperty Name="DT_Creation" ColumnName="DT_Creation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsersSet">
+      <EntityTypeMapping TypeName="IsTypeOf(note_appModel.Users)">
+        <MappingFragment StoreEntitySet="UsersSet">
+          <ScalarProperty Name="CD_Users" ColumnName="CD_Users" />
+          <ScalarProperty Name="CH_Name" ColumnName="CH_Name" />
+          <ScalarProperty Name="CH_Login" ColumnName="CH_Login" />
+          <ScalarProperty Name="CH_Password" ColumnName="CH_Password" />
+          <ScalarProperty Name="DT_Creation" ColumnName="DT_Creation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

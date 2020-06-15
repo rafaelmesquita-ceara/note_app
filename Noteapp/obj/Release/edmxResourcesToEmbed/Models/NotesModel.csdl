@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="note_appModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NoteEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="NotesSet" EntityType="note_appModel.NotesSet" />
+    <EntitySet Name="UsersSet" EntityType="note_appModel.Users" />
+  </EntityContainer>
+  <EntityType Name="NotesSet">
+    <Key>
+      <PropertyRef Name="CD_Notes" />
+    </Key>
+    <Property Name="CD_Notes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CH_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CH_Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DT_Creation" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="CD_Users" />
+    </Key>
+    <Property Name="CD_Users" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CH_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CH_Login" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CH_Password" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DT_Creation" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>
