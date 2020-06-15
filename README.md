@@ -19,7 +19,7 @@ O note_app consiste em 4 funções, atendendo ao CRUD:
  - Editar nota selecionada na tabela
  - Remover nota selecionada na tabela
 
-# Conceitos apliados
+# Conceitos aplicados
 No desenvolvimento do note_app alguns conceitos foram colocados em prática:
 	
  - Entity Framework code-first utilizando migrations (Pasta Migrations)
