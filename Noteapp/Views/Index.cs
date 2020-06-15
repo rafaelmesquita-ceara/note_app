@@ -35,7 +35,7 @@ namespace Noteapp
             List<NotesSet> Notas = new NotesController().ListarNotas();
             foreach (NotesSet Nota in Notas)
             {
-                dataGridView1.Rows.Add(Nota.CD_Notes,
+                dataGridView1.Rows.Add(Nota.ID,
                     Nota.CH_Name,
                     Nota.CH_Description,
                     Nota.DT_Creation);

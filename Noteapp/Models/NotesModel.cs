@@ -7,3 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace Noteapp.Models
+{
+    using System;
+    using System.Collections.Generic;
+
+    public partial class NotesSet
+    {
+        public int ID { get; set; }
+        public string CH_Name { get; set; }
+        public string CH_Description { get; set; }
+        public System.DateTime DT_Creation { get; set; }
+    }
+}

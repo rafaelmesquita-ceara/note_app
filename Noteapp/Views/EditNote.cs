@@ -31,7 +31,7 @@ namespace Noteapp.Views
         {
             var nota = new NotesSet
             {
-                CD_Notes = id,
+                ID = id,
                 CH_Name = tb_Nome.Text,
                 CH_Description = tb_Description.Text,
                 DT_Creation = DateTime.Now
